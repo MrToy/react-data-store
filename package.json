@@ -1,0 +1,39 @@
+{
+  "name": "react-data-store",
+  "version": "0.0.1",
+  "description": "React state container with Decorator",
+  "main": "build/index.js",
+  "scripts": {
+    "build":"babel src -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrToy/react-data-store.git"
+  },
+  "keywords": [
+    "flux",
+    "decorator",
+    "store",
+    "publish",
+    "subscribe",
+    "live",
+    "hot",
+    "functional",
+    "predictable",
+    "state",
+    "reducer"
+  ],
+  "author": "toy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrToy/react-data-store/issues"
+  },
+  "homepage": "https://github.com/MrToy/react-data-store#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.5.0"
+  }
+}
