@@ -15,10 +15,15 @@ First,Create one of store.js
 ```js
 import {createStore} from 'react-data-store'
 
-export default createStore({
-	key:1,
-	change(){
-		this.setState({key:Math.random()})
+export default createStore(setState=>{
+	return {
+		name:"toy",
+		info:{
+			thumb:null
+		},
+		login(id,pass){
+			setState({name:"other"})
+		}	
 	}
 })
 ```

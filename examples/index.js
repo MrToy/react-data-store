@@ -1,6 +1,6 @@
 import React from 'react'
 import store from '../store'
-import {withStore} from '../store/react-data-store'
+import {withStore} from '../src/react-data-store'
 
 @withStore({store})
 class Main extends React.Component{

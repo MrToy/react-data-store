@@ -23,11 +23,14 @@ export const withStore=items=>Component=>class extends React.Component{
 		return <Component {...this.props} {...this.state} />
 	}
 }
-export function createStore(it){
-	var store=new Store(it)
-	it.setState=function(data){
-		Object.assign(this,data)
-		store.pub(this)
+export function createStore(fn){
+	var store
+	var state
+	var dispatch=function(data){
+		Object.assign(state,data)
+		store.pub(state)
 	}
+	state=fn(dispatch)
+	store=new Store(state)
 	return store
 }

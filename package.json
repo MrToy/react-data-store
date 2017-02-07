@@ -1,6 +1,6 @@
 {
   "name": "react-data-store",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "React state container with Decorator",
   "main": "build/index.js",
   "scripts": {
