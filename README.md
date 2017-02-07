@@ -10,12 +10,25 @@ react-data-store is a state manager for React
 
 It will map your store properties to component
 
-component.js
+First,Create one of store.js
+
+```js
+import {createStore} from 'react-data-store'
+
+export default createStore({
+	key:1,
+	change(){
+		this.setState({key:Math.random()})
+	}
+})
+```
+
+then, bind it to your component.js
 
 ```js
 import React from 'react'
-import store from '../store'
-import {withStore} from '../store/react-data-store'
+import store from './store.js'
+import {withStore} from 'react-data-store'
 
 @withStore({store})
 class Main extends React.Component{
@@ -33,17 +46,19 @@ class Main extends React.Component{
 export default Main
 ```
 
-one of store.js
+
+
+##If with pure function Component
 
 ```js
-import {createStore} from './react-data-store'
-
-export default createStore({
-	key:1,
-	change(){
-		this.setState({key:Math.random()})
-	}
-})
+const Main=withStore({store})(props=>(
+	<div>
+		<div>{props.key}</div>
+		<button onClick={props.onchange}>Click me!</button>
+	</div>
+))
 ```
+
+
 
 
