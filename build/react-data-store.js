@@ -90,11 +90,14 @@ var withStore = exports.withStore = function withStore(items) {
 		}(_react2.default.Component);
 	};
 };
-function createStore(it) {
-	var store = new _store2.default(it);
-	it.setState = function (data) {
-		Object.assign(this, data);
-		store.pub(this);
+function createStore(fn) {
+	var store;
+	var state;
+	var dispatch = function dispatch(data) {
+		Object.assign(state, data);
+		store.pub(state);
 	};
+	state = fn(dispatch);
+	store = new _store2.default(state);
 	return store;
 }
